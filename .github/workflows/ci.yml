@@ -1,0 +1,5 @@
+name: CI - Compile
+
+on:
+  push:
+    branches: [ main, develop ]
