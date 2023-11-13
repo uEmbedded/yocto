@@ -3,3 +3,15 @@ name: CI - Compile
 on:
   push:
     branches: [ main, develop ]
+jobs:
+  build:
+    runs-on: [linux, x64, yocto]
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    - name: Build Yocto Rootfs
+      run:  |
+        source poky/oe-init-build-env .
+        bitbake core-minimal-image
+        
