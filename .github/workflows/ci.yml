@@ -1,8 +1,7 @@
 name: CI - Compile
 
-on:
-  push:
-    branches: [ main, develop ]
+on:[workflow_dispatch]
+
 jobs:
   build:
     runs-on: [linux, x64, yocto]
